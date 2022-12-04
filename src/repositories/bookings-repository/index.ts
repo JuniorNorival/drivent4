@@ -9,9 +9,9 @@ async function findBookingById(bookingId: number) {
   return prisma.booking.findFirst({ where: { id: bookingId } });
 }
 
-const bookingService = {
+const bookingRepository = {
   findBookingById,
   findBookingByUserId,
 };
 
-export default bookingService;
+export default bookingRepository;
