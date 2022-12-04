@@ -5,6 +5,7 @@ import { AuthenticatedRequest } from "@/middlewares";
 
 export async function getBookingByUser(req: AuthenticatedRequest, res: Response) {
   const { userId } = req;
+
   try {
     const userBooking = await bookingService.getUserBooking(userId);
     return res.status(httpStatus.OK).send(userBooking);
