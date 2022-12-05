@@ -20,3 +20,12 @@ export async function createManyBookings(roomId: number) {
     ],
   });
 }
+
+export async function findBooking(userId: number, roomId: number) {
+  return await prisma.booking.findFirst({
+    where: {
+      userId: userId,
+      roomId: roomId,
+    },
+  });
+}
