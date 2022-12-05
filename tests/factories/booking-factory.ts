@@ -7,6 +7,9 @@ export async function createBookingWithRoomId(userId: number, roomId: number) {
       userId,
       roomId,
     },
+    include: {
+      Room: true,
+    },
   });
 }
 
